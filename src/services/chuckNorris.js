@@ -1,11 +1,13 @@
 const axios = require('axios').default;
 
-export const getChuckNorrisRandomJoke = async () => {
+module.exports = {
+getChuckNorrisRandomJoke: async function() {
 	try {
-		const { data } = await axios
+		const response = await axios
 		.get('https://api.chucknorris.io/jokes/random');
+		const data = response.data;
 		return data.value;
 	} catch(err) {
 		return null;
 	}
-};
+}};

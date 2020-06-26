@@ -1,6 +1,7 @@
 const axios = require('axios').default;
 
-export const sendMessage = (channel, message) => {
+module.exports = {
+sendMessage: function(channel, message) {
 	axios
 		.post(
 			'https://slack.com/api/chat.postMessage',
@@ -22,4 +23,4 @@ export const sendMessage = (channel, message) => {
 		.catch(function (error) {
 			console.log('Erro ao enviar mensagem para o Slack');
 		});
-};
+}};

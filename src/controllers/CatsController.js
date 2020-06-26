@@ -1,8 +1,10 @@
-import { sendMessage } from '../services/slack';
-import { getCatsRandomFact } from '../services/cats';
+const SlackService = require('../services/slack');
+const CatsService = require('../services/cats');
 
-export const showCatsRandomFact = async (channel) => {
+module.exports = {
+    showCatsRandomFact: async function(channel) {
 
-    const fact = await getCatsRandomFact();
-    sendMessage(channel, fact);
-}
+        const fact = await CatsService.getCatsRandomFact();
+        SlackService.sendMessage(channel, fact);
+    }
+};

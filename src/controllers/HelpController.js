@@ -1,8 +1,8 @@
-import { sendMessage } from '../services/slack';
+const SlackService = require('../services/slack');
 
-export const showHelp = (channel) => {
-
-    const message = `
+module.exports = {
+	showHelp: function (channel) {
+		const message = `
         Eu sou um bot meio lesado e só respondo se você me chamar. Ainda tô aprendendo os rolê, então só sei esses comandos aqui ó:\n
         - *ajuda ou help*: abro esse menu que você tá vendo agora, então num paga de loko denovo e pede isso denovo não hein.\n
         - *chuck norris*: te mando uma frase aleatória desse maluco fera aí.\n
@@ -10,5 +10,6 @@ export const showHelp = (channel) => {
         - *gato ou cat*: te mando um fato aleatório sobre gatos.\n
     `;
 
-    sendMessage(channel, message);
-}
+		SlackService.sendMessage(channel, message);
+	},
+};

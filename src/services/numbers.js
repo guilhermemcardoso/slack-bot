@@ -1,12 +1,13 @@
 const axios = require('axios').default;
 
-export const getNumberRandomFact = async (number) => {
-	console.log('ENTROU 3', number);
+module.exports = {
+getNumberRandomFact: async function(number) {
 	try {
-		const { data } = await axios
+		const response = await axios
 		.get('http://numbersapi.com/' + number);
-		return data;
+
+		return response.data;
 	} catch(err) {
 		return null;
 	}
-};
+}};

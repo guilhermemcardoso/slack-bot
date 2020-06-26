@@ -1,8 +1,9 @@
-import { sendMessage } from '../services/slack';
-import { getChuckNorrisRandomJoke } from '../services/chuckNorris';
+const SlackService = require('../services/slack');
+const ChuckNorrisService = require('../services/chuckNorris');
 
-export const showChuckNorrisRandomJoke = async (channel) => {
-
-    const joke = await getChuckNorrisRandomJoke();
-    sendMessage(channel, joke);
-}
+module.exports = {
+	showChuckNorrisRandomJoke: async function (channel) {
+		const joke = await ChuckNorrisService.getChuckNorrisRandomJoke();
+		SlackService.sendMessage(channel, joke);
+	},
+};

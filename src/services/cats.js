@@ -1,10 +1,11 @@
 const axios = require('axios').default;
 
-export const getCatsRandomFact = async () => {
+module.exports = {
+getCatsRandomFact: async function() {
 	try {
-		const { data } = await axios
+		const response = await axios
 		.get('https://cat-fact.herokuapp.com/facts');
-
+		const data = response.data;
 		const facts = data.all;
 		const size = facts.length;
 		const randomIndex = Math.floor(Math.random() * size); 
@@ -12,4 +13,4 @@ export const getCatsRandomFact = async () => {
 	} catch(err) {
 		return null;
 	}
-};
+}};
