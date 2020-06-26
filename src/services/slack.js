@@ -19,6 +19,7 @@ sendMessage: function(channel, message) {
 		)
 		.then(function (response) {
 			console.log('Maicon Bot respondeu à mensagem');
+			console.log('SLACK RESPONSE', response);
 		})
 		.catch(function (error) {
 			console.log('Erro ao enviar mensagem para o Slack');
