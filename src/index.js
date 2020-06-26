@@ -56,6 +56,7 @@ app.post('/', (req, res) => {
 
     messageList[index] = event_id;
     order === 'desc' ? index-- : index++;
+    res.sendStatus(200);
 });
 
 app.listen(PORT);
