@@ -3,6 +3,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import { handleMessage } from './controllers/MainController';
 import { removeUserIdFromMessage, MessageList } from './utils/message';
+
+const PORT = process.env.APP_PORT || 8080;
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -27,4 +29,4 @@ app.post('/', (req, res) => {
     messageList.add(event_id);
 });
 
-app.listen(process.env.APP_PORT, () => console.log(`Maicon Bot listening at port ${process.env.APP_PORT}.`));
+app.listen(PORT, () => console.log(`Maicon Bot listening at port ${PORT}.`));
