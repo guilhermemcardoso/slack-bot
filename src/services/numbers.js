@@ -1,7 +1,7 @@
 const axios = require('axios').default;
 
 module.exports = {
-getNumberRandomFact: async function(number) {
+async getNumberRandomFact(number) {
 	try {
 		const response = await axios
 		.get('http://numbersapi.com/' + number);

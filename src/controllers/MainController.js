@@ -5,7 +5,7 @@ const CatsController = require('./CatsController');
 const MessageUtils = require('../utils/message');
 
 module.exports = {
-	handleMessage: function (message, channel) {
+	handleMessage(message, channel) {
 		const command = MessageUtils.getCommandFromMessage(message);
 		switch (command.toUpperCase()) {
 			case 'AJUDA':

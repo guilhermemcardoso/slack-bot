@@ -1,14 +1,18 @@
-module.exports = {
+const MAX_SIZE = 200;
+let index = MAX_SIZE;
+let order = 'desc';
+const messageList = [];
 
-	wasAnswered: function (messageList, messageId) {
-		const index = list.findIndex((id) => id === messageId);
+module.exports = {
+	wasAnswered(messageId) {
+		const index = messageList.findIndex((id) => id === messageId);
 		if (index >= 0) return true;
 		return false;
 	},
 
-	add: function (messageList, messageId) {
-		if (this.getSize() < MAX_SIZE) {
-			list.push(messageId);
+	add(messageId) {
+		if (messageList.length < MAX_SIZE) {
+			messageList.push(messageId);
 			return;
 		}
 
@@ -22,7 +26,7 @@ module.exports = {
 			order = 'asc';
 		}
 
-		list[index] = messageId;
+		messageList[index] = messageId;
 		order === 'desc' ? index-- : index++;
 	},
 };

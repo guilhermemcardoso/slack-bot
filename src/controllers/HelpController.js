@@ -1,7 +1,7 @@
 const SlackService = require('../services/slack');
 
 module.exports = {
-	showHelp: function (channel) {
+	showHelp(channel) {
 		const message = `
         Eu sou um bot meio lesado e só respondo se você me chamar. Ainda tô aprendendo os rolê, então só sei esses comandos aqui ó:\n
         - *ajuda ou help*: abro esse menu que você tá vendo agora, então num paga de loko denovo e pede isso denovo não hein.\n

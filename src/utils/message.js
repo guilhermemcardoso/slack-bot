@@ -1,14 +1,14 @@
 module.exports = {
-	removeUserIdFromMessage: function (message) {
+	removeUserIdFromMessage(message) {
 		return message.replace(/<@U[A-Z0-9]+>/g, '').trim();
 	},
 
-	getFirstParamFromMessage: function (message) {
+	getFirstParamFromMessage(message) {
 		const parts = message.trim().split(' ');
 		return parts[1];
 	},
 
-	getCommandFromMessage: function (message) {
+	getCommandFromMessage(message) {
 		const parts = message.trim().split(' ');
 		return parts[0];
 	}
