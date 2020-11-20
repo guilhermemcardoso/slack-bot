@@ -32,12 +32,15 @@ module.exports = {
 			case 'GATO':
 			case 'CAT':
 				CatsController.showCatsRandomFact(channel);
+				break;
 			case 'CACHORRO':
 			case 'DOG':
 				DogsController.showDogsRandomImage(channel);
+				break;
 			case 'BITCOIN':
 			case 'BTC':
 				BitcoinController.showBitcoinCurrentPrice(channel);
+				break;
 			case 'REGGAE':
 			case '420':
 				ReggaeController.showRandomReggaeSentence(channel);
