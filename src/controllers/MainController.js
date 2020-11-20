@@ -2,6 +2,9 @@ const HelpController = require('./HelpController');
 const ChuckNorrisController = require('./ChuckNorrisController');
 const NumbersController = require('./NumbersController');
 const CatsController = require('./CatsController');
+const DogsController = require('./DogsController');
+const ReggaeController = require('./ReggaeController');
+const BitcoinController = require('./BitcoinController');
 const MessageUtils = require('../utils/message');
 
 module.exports = {
@@ -29,6 +32,15 @@ module.exports = {
 			case 'GATO':
 			case 'CAT':
 				CatsController.showCatsRandomFact(channel);
+			case 'CACHORRO':
+			case 'DOG':
+				DogsController.showDogsRandomImage(channel);
+			case 'BITCOIN':
+			case 'BTC':
+				BitcoinController.showBitcoinCurrentPrice(channel);
+			case 'REGGAE':
+			case '420':
+				ReggaeController.showRandomReggaeSentence(channel);
 				break;
 		}
 	},
